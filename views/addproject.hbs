@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="	https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <title>My Project</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-5" href='/'>
+                <img src="/public/asset/logo.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" aria-current="page" href='/'>Home</a>
+                    </li>
+                    {{#if isLogin}}
+                    <li class="nav-item">
+                        <a class="nav-link active text-orange" aria-current="page" href='/add-project'>Add Project</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <div class="right-side d-flex">
+                     {{#if isLogin}}
+                        <p class="btn-auth">{{user.name}},</p>
+                        <a href='/logout' class='btn-auth'> Logout </a>
+                    {{else}}
+                        <a href='/login' class='btn-auth'> Login </a>
+                        <a href='/register' class='btn-auth'> Register </a>
+                    {{/if}}
+                <div class='d-flex contact-me'>
+                   
+                    <a href='/contact' class="contactku ">contact me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="allin">
+        <div class="container-blog-form d-flex justify-content-center mt-2 align-items-center">
+            
+        
+            <form action='/add-project' method='POST' class="m-0">
+                <h1 class="text-center mb-1">ADD MY PROJECT</h1><br>
+                <div class="mt-3">
+                    <label for="input-title" class="form-label">Project Name</label>
+                    <input type="text" class="form-control" name="title" id="input-title" placeholder="Write here ..." />
+                </div><br>
+                <div class=" date d-flex">
+                    <div class="col-md-6">
+                        <label for="validationCustom01" class="form-label">Start Date</label>
+                        <input type="date" class="form-control" id="validationCustom01" name="sdate" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="validationCustom02" class="form-label">End Date</label>
+                        <input type="date" class="form-control" id="validationCustom02" name="edate" required>
+                    </div>
+                </div><br>
+                <div class="mt-3">
+                    <label for="input-content" class="form-label">Dekskripsi</label>
+                    <textarea class="form-control" id="input-content" name="content" rows="6" placeholder="Write here ..."></textarea>
+                </div><br>
+                <div class="form-group">
+                    <label for="exampleInputTechnologies">Technologies</label>
+                    <div class="form-row d-flex">
+                        <div class="form-group col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="checkboxHtml"  id="checkboxHtml"/>
+                                <label class="form-check-label" for="flexCheckDefault">
+                                    Html
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="checkboxCss"  id="checkboxCss"/>
+                                <label class="form-check-label" for="checkboxCss">
+                                    Css
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="checkboxReact"  id="checkboxReact"/>
+                                <label class="form-check-label" for="checkboxReact">
+                                    React Js
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="checkboxJavascript"  id="checkboxJavascript"/>
+                                <label class="form-check-label" for="checkboxJavascript">
+                                    Javascript
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image">
+                    <div class="mt-2">
+                        <label for="input-image" class="form-label">Upload Image</label>
+                        <input class="form-control" name="image" type="file" id="input-image" />
+                    </div>
+                    <div class="btnsubmit text-end mt-4">
+                        <button class="btn bg-black text-white px-4">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

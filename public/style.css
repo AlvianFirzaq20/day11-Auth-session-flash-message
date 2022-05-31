@@ -1,0 +1,156 @@
+body{
+    margin: 0px;
+}
+.bg-gray {
+    background-color: #f4f3f3;
+  }
+
+ .background h1{
+     text-align: center;
+ } 
+ .background h2{
+     text-align: center;
+ }
+.navbar {
+    height: 7vh;
+}
+.allin{
+    padding-top: 40px;
+    background-color: #E4E4E4;
+    width: 100%;
+}
+.profile{
+    margin-top: 40px;
+}
+.contactku{
+    border-radius: 15px;
+    background-color:#000000;
+    padding: 5px 10px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    width: 100px;
+    color: white;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+  
+.container .contact{
+    border-radius: 30px;
+}
+.container .contact a{
+    text-decoration: none;
+    color: white;
+}
+
+.background{
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(228, 228, 228);
+}
+.card-body p{
+    text-align: justify;
+    margin-top: 20px;
+}
+.card-body .download{
+    display: flex;
+}
+.card-body .download a{
+    text-decoration: none;
+}
+.card-body .download button{
+    border: none;
+    border-radius: 30px;
+    padding: 5px 25px;
+    font-size: 20px;
+}
+.card-body .download h4{
+    margin-top: auto;
+}
+.card-body .sosmed{
+    display: flex;
+    font-size: 40px;
+    margin-left: 100px;
+}
+.card-body .sosmed .box{
+    margin-right: 40px;
+}
+.card-body .sosmed .box i{
+    color: black;
+}
+.card-body .card-text-name{
+    text-align: center;
+}
+.col-md-4{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.project h1{
+    text-align: center;
+}
+.btn-project{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.btn-project button{
+    border: none;
+    border-radius: 10px;
+    padding: 5px 75px;
+}
+.logo{
+    font-size: 200%;
+}
+.card-footer{
+    text-align: right;
+}
+form{
+    width: 400px;
+    margin: auto;
+    margin-top: 40px;
+}
+form div label {
+    font-size: 20px;
+    font-weight: 700;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+.form-group-btn{
+    text-align: right;
+}
+.form-group-btn button{
+    background-color: black;
+    border: none;
+    border-radius: 30px;
+    padding: 3px 30px;
+    font-size: 20px;
+    margin-bottom: 20vh;
+}
+.detail-content p{
+    text-align: justify;
+}
+.head-detail-duration{
+    font-size: 17px;
+}
+.head-detail-item{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    font-size: 17px;
+    
+}.card-body a{
+    text-decoration: none;
+}
+
+.btn-auth {
+    font-size: 15px !important;
+    padding-top: 25px !important;
+    padding-right: 20px;
+    color: rgb(72, 72, 72) !important;
+    text-decoration: none !important;
+    background-color: #ec4c3700;
+}
+
+.btn-auth:hover {
+    color: #000000 !important;
+}

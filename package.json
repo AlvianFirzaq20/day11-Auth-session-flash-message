@@ -1,0 +1,29 @@
+{
+  "name": "personal-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlvianFirzaq20/day-6-bootstrapdesaign.git"
+  },
+  "author": "Alvian Firzaq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlvianFirzaq20/day-6-bootstrapdesaign/issues"
+  },
+  "homepage": "https://github.com/AlvianFirzaq20/day-6-bootstrapdesaign#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.18.1",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3"
+  }
+}

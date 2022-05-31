@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Project Detail</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-white fixed-top">
+        <div class="container">
+            <a class="navbar-brand me-5" href='/'>
+                <img src="/public/asset/logo.png" alt="" />
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active me-3" aria-current="page" href='/'>Home</a>
+                    </li>
+                    {{#if isLogin}}
+                    <li class="nav-item">
+                        <a class="nav-link active text-orange" aria-current="page" href='/add-project'>Add Project</a>
+                    </li>
+                    {{/if}}
+                </ul>
+                <div class="right-side d-flex">
+                     {{#if isLogin}}
+                        <p class="btn-auth">{{user.name}},</p>
+                        <a href='/logout' class='btn-auth'> Logout </a>
+                    {{else}}
+                        <a href='/login' class='btn-auth'> Login </a>
+                        <a href='/register' class='btn-auth'> Register </a>
+                    {{/if}}
+                <div class='d-flex contact-me'>
+                   
+                    <a href='/contact' class="contactku ">contact me</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--PROFILE-->
+    <div class="background">
+    <div class="container h-100">
+        <h1>{{ projects.name }}</h1>
+        <div class="container h-100">
+            <div class="row align-items-center h-100 pt-5 pb-5">
+              <form class="col-12 wow fadeInUp " data-wow-delay="0.2s">
+                <div class="card"> 
+                  <div class="card mb-3" style="max-width: auto;">
+                        <div class="row no-gutters">
+                            <div class="col-md-8">
+                            <img src="/public/asset/JavaScript-featured-duniailkom.png" class="card-img" alt="...">
+                            </div>
+                            <div class="col-md-4">
+                            <div class="card-body">
+                                 <div class="head-detail-duration mb-3">
+                                    <h3 style="margin-top: 0px;">Duration</h3>
+                                    <p><i class="fa-solid fa-calendar"></i> {{ projects.start_date }} - {{ projects.end_date}}</p>
+                                    <p><i class="fa-solid fa-calendar-day"></i>{{ projects.duration }}</p>
+                                </div>
+                                <div>
+                                <h3>Tecnologi</h3>
+                                <div class="head-detail-item">
+                                {{#if projects.technologies.[0]}}<i class="fa-brands fa-html5"> &nbsp HTML</i> {{/if}}
+                                {{#if projects.technologies.[1]}}<i class="fa-brands fa-css3-alt"> &nbsp CSS </i>{{/if}}
+                                {{#if projects.technologies.[2]}} <i class="fa-brands fa-node-js"> &nbsp Javascript</i>{{/if}}
+                                {{#if projects.technologies.[3]}} <i class="fa-brands fa-react"> &nbsp Reacth </i>{{/if}}
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                         <div id="content"class="detail-content">
+                            <p>{{ projects.description }}</p>
+                        </div>
+                </div>
+              </form>
+            </div>
+          </div>          
+      </div>
+    </div>
+    <!--PROFILE END-->
+</body>
+</html>
