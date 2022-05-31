@@ -1,3 +1,4 @@
+//------------------- Package-------------------
 const express = require ('express');
 const bcrypt = require ('bcrypt');
 const session = require ('express-session');
@@ -6,9 +7,11 @@ const hbs = require ('hbs');
 const path = require ('path');
 const db = require ('./connection/db.js');
 const res = require('express/lib/response');
+const nodemailer = require ('nodemailer');
 
 const app = express();
 hbs.registerPartials(path.join(__dirname,'/view/partials'));
+//---------------xPackage-----------------------
 
 
 const PORT = 100;
@@ -32,6 +35,7 @@ app.use(session({
 
 app.use(flash());
 
+//------------------------------ function get global time 
 const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',];
 
 let project=[{
@@ -48,7 +52,7 @@ let project=[{
   content: 'kgofkgokgorkogrk'
 }];
 
-
+//--------------------------- INDEX ----------------------
 app.get('/', (req, res) => {
   // console.log(projects);
   // res.render('index',{projects});
@@ -94,6 +98,8 @@ app.get('/', (req, res) => {
   })
   console.log(isLogin)
 })
+
+//-----------------------+INDEX+-------------------
 
 app.get('/add-project',(req, res)=>{
   
@@ -252,6 +258,24 @@ app.get("/contact", (req, res) => {
   });
 });
 
+app.post("/contact", (req, res)=>{
+    
+    let name = req.body.name
+    let email = req.body.email
+    let number = req.body.phone
+    let subject = req.body.subject
+    let message = req.body.message
+  
+    let transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+          user: "jihanalyadiba20@gmail.com",
+          pass: "hencerymonstec!!@@33"
+      },
+  });
+  
+})
+
 app.get("/project-detail/:id", (req, res) => {
   let id = req.params.id;
  
@@ -373,7 +397,7 @@ app.post('/login', (req, res) => {
         name: data[0].name,
       };
 
-      req.flash('success', `Welcome, <b>${data[0].email}</b>`);
+      req.flash('success', `Welcome, <b>${data[0].name}</b>`);
 
       res.redirect('/');
     });
